@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Pokemon";
+  src: url(/fonts/Pokemon.ttf);
+}
 * {
   list-style-type: none;
   font-family: sans-serif;
@@ -23,6 +27,7 @@ button {
   font-weight: bold;
   border-radius: 10px;
   background: black;
+  padding: 5px 15px 20px 15px;
 }
 
 li {
@@ -34,10 +39,6 @@ li {
 
 a {
   text-decoration: none;
-}
-
-#buttons li {
-  transform: rotate(90deg);
 }
 
 #wrapper .design {

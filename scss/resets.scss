@@ -1,4 +1,8 @@
-// IMPORTS
+// IMPORTS & FONT FACE
+@font-face {
+	font-family: "Pokemon";
+	src: url(/fonts/Pokemon.ttf);
+}
 
 // BROWSER RESETS
 * {
@@ -26,6 +30,7 @@ button {
 	font-weight: bold;
 	border-radius: 10px;
 	background: black;
+	padding: 5px 15px 20px 15px;
 }
 
 li {
@@ -37,9 +42,9 @@ a {
 	text-decoration: none;
 }
 
-#buttons li {
-	transform: rotate(90deg);
-}
+// #buttons li {
+// 	transform: rotate(90deg);
+// }
 
 #wrapper .design {
 	position: absolute;
