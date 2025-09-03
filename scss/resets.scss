@@ -1,0 +1,50 @@
+// IMPORTS
+
+// BROWSER RESETS
+* {
+	list-style-type: none;
+	font-family: sans-serif;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+h1,h2,h3,h4,h5,p,ol,ul,li,figure,body {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 1.1rem;
+	font-weight: bold;
+	border-radius: 10px;
+	background: black;
+}
+
+li {
+	width: fit-content;
+	height: fit-content;
+}
+
+a {
+	text-decoration: none;
+}
+
+#buttons li {
+	transform: rotate(90deg);
+}
+
+#wrapper .design {
+	position: absolute;
+}
+
+#wrapper .hide {
+	display: none;
+}
