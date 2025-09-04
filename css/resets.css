@@ -2,6 +2,16 @@
   font-family: "Pokemon";
   src: url(/fonts/Pokemon.ttf);
 }
+:root {
+  --primary-text-color: black;
+  --secondary-text-color: white;
+  --primary-design-text-color: white;
+  --primary-design-color: #ff4848;
+  --secondary-design-color: #cb3838;
+  --third-design-color: black;
+  --fourth-design-color: white;
+}
+
 * {
   list-style-type: none;
   font-family: sans-serif;
@@ -21,12 +31,12 @@ h1, h2, h3, h4, h5, p, ol, ul, li, figure, body {
 
 button {
   border: none;
-  color: white;
+  color: var(--primary-design-text-color);
   cursor: pointer;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 10px;
-  background: black;
+  background: var(--third-design-color);
   padding: 5px 15px 20px 15px;
 }
 

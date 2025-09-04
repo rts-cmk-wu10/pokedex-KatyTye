@@ -10,9 +10,9 @@
 		top: -8px;
 		left: 30px;
 		z-index: 10;
-		color: white;
 		position: inherit;
 		font-family: "Pokemon";
+		color: var(--primary-design-text-color);
 	}
 
 	#buttons {
@@ -37,7 +37,7 @@
 		height: 750px;
 		position: inherit;
 		border-radius: 30px;
-		background: #cb3838;
+		background: var(--secondary-design-color);
 	}
 
 	.background {
@@ -46,7 +46,7 @@
 		height: 750px;
 		position: inherit;
 		border-radius: 30px;
-		background: #ff4848;
+		background: var(--primary-design-color);
 	}
 
 	.white-spot {
@@ -57,11 +57,45 @@
 		height: 200px;
 		position: inherit;
 		border-radius: 20px;
-		background: white;
+		background: var(--fourth-design-color);
 	}
 
 	.white-spot.second {
 		top: 300px;
 		height: 425px;
+	}
+}
+
+#wrapper {
+	position: relative;
+}
+
+#page-content {
+	left: 50%;
+	top: 50%;
+	width: 600px;
+	height: 800px;
+	position: relative;
+	transform: translate(-45%, -48%);
+
+	.line {
+		background: black;
+	}
+
+	section {
+		left: 5%;
+		width: 425px;
+		height: 425px;
+		padding: 10px;
+		position: inherit;
+	}
+
+	#top {
+		top: 10%;
+		height: 200px;
+	}
+
+	#bottom {
+		top: 13%;
 	}
 }
