@@ -61,6 +61,21 @@
 #wrapper {
   position: relative;
 }
+#wrapper #list {
+  display: grid;
+  max-height: 403px;
+  overflow: hidden scroll;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+}
+#wrapper #backwords, #wrapper #forwords {
+  padding: 10px;
+  font-size: 0.9rem;
+  background: transparent;
+  color: var(--primary-text-color);
+}
+#wrapper #forwords {
+  margin: 100px 0 0 227px;
+}
 
 #page-content {
   left: 50%;
