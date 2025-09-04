@@ -73,17 +73,18 @@
 #page-content {
 	left: 50%;
 	top: 50%;
-	width: 600px;
-	height: 800px;
+	z-index: 100;
+	width: 500px;
+	height: 750px;
 	position: relative;
-	transform: translate(-45%, -48%);
+	transform: translate(-54%, -51%);
 
 	.line {
 		background: black;
 	}
 
 	section {
-		left: 5%;
+		left: 6%;
 		width: 425px;
 		height: 425px;
 		padding: 10px;
@@ -91,11 +92,11 @@
 	}
 
 	#top {
-		top: 10%;
+		top: 10.5%;
 		height: 200px;
 	}
 
 	#bottom {
-		top: 13%;
+		top: 13.25%;
 	}
 }
