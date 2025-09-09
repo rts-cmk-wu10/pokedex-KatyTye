@@ -1,0 +1,110 @@
+#wrapper {
+  background: var(--primary-text-color);
+}
+
+#top-content {
+  top: 3%;
+  z-index: 5;
+  display: flex;
+  width: 550px;
+  padding: 0 40px;
+  position: absolute;
+  align-items: center;
+  justify-content: space-evenly;
+  color: var(--secondary-text-color);
+}
+#top-content button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+#top-content button img {
+  width: 40px;
+}
+
+#content figure[class=pokemon-top] {
+  z-index: 1;
+  position: relative;
+  padding-bottom: 30px;
+  background: #b8b8b8;
+}
+#content figure[class=pokemon-top] img {
+  left: 50%;
+  z-index: 10;
+  width: 300px;
+  position: relative;
+  transform: translate(-50%, 50%);
+}
+#content figure[class=pokemon-top] svg {
+  top: -20%;
+  z-index: 5;
+  right: -10%;
+  position: absolute;
+}
+#content figure[class=pokemon-top] figcaption {
+  height: 20px;
+  display: flex;
+  width: inherit;
+  padding: 0 50px;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+#content figure[class=pokemon-top] figcaption button {
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+#content figure[class=pokemon-top] figcaption button img {
+  width: 20px;
+  transform: translate(-50%, 0%);
+}
+#content .info-section {
+  padding: 75px 25px 0px;
+  background: var(--primary-background-color);
+}
+#content .info-section ul, #content .info-section ol {
+  display: flex;
+  justify-content: center;
+}
+#content .info-section h2 {
+  margin: 25px 0;
+  text-align: center;
+}
+#content .info-section .basic-info li {
+  width: 150px;
+  display: inherit;
+  padding-top: 10px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#content .info-section .basic-info li > p {
+  font-size: 0.75rem;
+  color: var(--third-text-color);
+}
+#content .info-section .basic-info figure {
+  background: none;
+}
+#content .info-section .basic-info figure img {
+  width: 20px;
+  margin-right: 10px;
+  transform: translateY(15%);
+}
+#content .info-section .basic-info figure * {
+  display: inline-block;
+}
+#content .info-section #type {
+  gap: 25px;
+}
+#content .info-section #type li {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 100px;
+  color: var(--secondary-text-color);
+  background: var(--fifth-background-color);
+}
+#content .info-section > p {
+  margin-top: 25px;
+}
