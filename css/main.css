@@ -92,6 +92,7 @@
 #page-content #list img {
   width: 96px;
   height: 96px;
+  cursor: pointer;
 }
 #page-content #list figure.unknown {
   width: 96px;
@@ -117,6 +118,15 @@
 #page-content #top {
   top: 10.5%;
   height: 200px;
+}
+#page-content #top #page-info.inline, #page-content #top img {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+}
+#page-content #top img.inline {
+  width: 90px;
+  height: 90px;
 }
 #page-content #bottom {
   top: 13.25%;

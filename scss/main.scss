@@ -103,6 +103,7 @@
 	#list img {
 		width: 96px;
 		height: 96px;
+		cursor: pointer;
 	}
 
 	#list figure.unknown {
@@ -133,6 +134,16 @@
 	#top {
 		top: 10.5%;
 		height: 200px;
+
+		#page-info.inline, img {
+			width: fit-content;
+			display: inline-block;
+		}
+
+		img.inline {
+			width: 90px;
+			height: 90px;
+		}
 	}
 
 	#bottom {
