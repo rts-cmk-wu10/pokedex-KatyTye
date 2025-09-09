@@ -98,6 +98,7 @@ async function loadPokemons() {
 								`<li title="${data.name}">
 								<figure class="unknown">
 									<img src="${unknownIcon}" id="${data.id}" alt="order-${data.order}" class="unknown">
+									<figcaption><p>${data.names[pokeDexLanguage].name || data.name}</p></figcaption>
 								</figure>
 							</li>`)
 						} else {
@@ -105,6 +106,7 @@ async function loadPokemons() {
 								`<li title="${data.name}">
 								<figure>
 									<img src="${data.sprites.front_default}" id="${data.id}" alt="order-${data.order}">
+									<figcaption><p>${data.names[pokeDexLanguage].name || data.name}</p></figcaption>
 								</figure>
 							</li>`)
 						}

@@ -19,9 +19,13 @@ function openAllPage(input) {
 
 			if (input == "poke" && currentItemSelect == 1025) {
 				currentItemSelect = 10025
+			} else if (input == "attack" && currentItemSelect == 308) {
+				currentItemSelect = 10001
 			}
 
 			if (input == "poke" && currentItemSelect >= 10278) {
+				reached = true
+			} else if (input == "attack" && currentItemSelect >= 367) {
 				reached = true
 			}
 
@@ -29,25 +33,37 @@ function openAllPage(input) {
 				fetch(`${FetchURLs[input]}${currentItemSelect}`)
 					.then((response) => response.json())
 					.then((data) => {
-						if (!data.sprites.front_default || data.sprites.front_default == null) {
+						let nameOfItem
+
+						try {
+							(data.names[pokeDexLanguage].name)
+							nameOfItem = data.names[pokeDexLanguage].name
+						} catch {
+							nameOfItem = data.name
+						}
+
+						if (data.sprites.default) {
 							listElement.insertAdjacentHTML("beforebegin",
-								`<li title="${data.name}">
-								<figure class="unknown">
-									<img src="${unknownIcon}" id="${data.id}" alt="order-${data.order}" class="unknown">
+								`<li title="${nameOfItem}">
+								<figure>
+									<img src="${data.sprites.default}" id="${data.id}" alt="order-${data.id}">
+									<figcaption><p>${nameOfItem}</p></figcaption>
 								</figure>
 							</li>`)
-						} else if (data.spritesdefault) {
+						} else if (!data.sprites.front_default || data.sprites.front_default == null) {
 							listElement.insertAdjacentHTML("beforebegin",
-								`<li title="${data.name}">
-								<figure>
-									<img src="${data.sprites.default}" id="${data.id}" alt="order-${data.order}">
+								`<li title="${nameOfItem}">
+								<figure class="unknown">
+									<img src="${unknownIcon}" id="${data.id}" alt="order-${data.order}" class="unknown">
+									<figcaption><p>${nameOfItem}</p></figcaption>
 								</figure>
 							</li>`)
 						} else {
 							listElement.insertAdjacentHTML("beforebegin",
-								`<li title="${data.name}">
+								`<li title="${nameOfItem}">
 								<figure>
 									<img src="${data.sprites.front_default}" id="${data.id}" alt="order-${data.order}">
+									<figcaption><p>${nameOfItem}</p></figcaption>
 								</figure>
 							</li>`)
 						}

@@ -67,6 +67,11 @@
   overflow: hidden scroll;
   grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 }
+#wrapper #list figcaption {
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+}
 #wrapper #navigation {
   width: 100%;
   display: flex;
@@ -100,6 +105,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 #page-content #list figure.unknown img.unknown {
   width: 50px;
