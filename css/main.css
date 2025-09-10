@@ -1,4 +1,5 @@
 #wrapper {
+  overflow: hidden;
   background: var(--primary-text-color);
 }
 
@@ -23,8 +24,15 @@
   width: 40px;
 }
 
+#content {
+  width: 550px;
+  height: 100vh;
+  overflow: hidden scroll;
+}
 #content figure[class=pokemon-top] {
   z-index: 1;
+  width: 550px;
+  height: 382px;
   position: relative;
   padding-bottom: 30px;
   background: #b8b8b8;
@@ -72,6 +80,9 @@
   margin: 25px 0;
   text-align: center;
 }
+#content .info-section .basic-info #abilitys-list > p {
+  text-align: center;
+}
 #content .info-section .basic-info li {
   width: 150px;
   display: inherit;
@@ -114,8 +125,8 @@
 }
 #content .info-section #stats-list progress {
   height: 7px;
-  width: 401px;
   border: none;
+  width: 396px;
   margin: 9px 0;
   overflow: hidden;
   -moz-appearance: none;
@@ -123,24 +134,27 @@
   margin-right: 5px;
   border-radius: 100px;
   -webkit-appearance: none;
-  background: #f1f1f1;
+  background: var(--fourth-background-color);
 }
 #content .info-section #stats-list progress::-webkit-progress-bar {
-  background: #f1f1f1;
   border-radius: 100px;
+  background: var(--fourth-background-color);
 }
 #content .info-section #stats-list progress::-webkit-progress-value, #content .info-section #stats-list progress::-moz-progress-bar {
-  background: #b8b8b8;
   border-radius: 100px;
+  background: var(--third-text-color);
 }
 #content .info-section #stats-list li > p:nth-of-type(1) {
+  text-align: end;
+  min-width: 65px;
   font-weight: bold;
   margin-right: 10px;
+  padding-right: 15px;
   color: var(--third-text-color);
   border-right: solid var(--third-text-color) 1px;
 }
 #content .info-section #stats-list li > p:nth-of-type(2) {
-  margin-left: 4px;
+  margin: 0 10px 0 4px;
 }
 #content .info-section > p {
   margin-top: 25px;
