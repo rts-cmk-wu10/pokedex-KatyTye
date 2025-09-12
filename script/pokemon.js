@@ -5,6 +5,9 @@ let sourceColors
 let baseHTML
 
 async function loadSpeficPokemon(pokemonID) {
+	let currentColor
+	let nextColor
+
 	await fetch(`${sourceApiURL}${pokemonID}`)
 		.then((repsonse) => repsonse.json())
 		.then((data) => {
@@ -44,26 +47,37 @@ async function loadSpeficPokemon(pokemonID) {
 	pdxId.innerHTML = "#" + retrievePokemonID(pokemonData.order)
 	pdxMoves.innerHTML = pokemonData.abilities.map((elm) => { return `<p>${elm.ability.name}</p>` }).join().replaceAll(",", "")
 
-	pdxType.innerHTML = pokemonData.types.map((elm) => {
+	pdxType.innerHTML = pokemonData.types.map((elm, idx) => {
+		if (idx === 0) {
+			currentColor = sourceColors[elm.type.name.toLowerCase()]
+			nextColor = `${sourceColors[elm.type.name.toLowerCase() + "2"]}`
+		}
 		return `<li style="background: ${sourceColors[elm.type.name.toLowerCase()]};"><p>${elm.type.name}</p></li>`
 	}).join().replaceAll(",", "")
 
 	pdxStats.innerHTML = pokemonData.stats.map((elm) => {
-		return `<li><p>${retrieveStatsName(elm.stat.name)}</p><p>${elm["base_stat"]}</p><progress value="${elm["base_stat"]}" max=100></progress></li>`
+		return `<li><p style="color:${currentColor};">${retrieveStatsName(elm.stat.name)}</p><p>${elm["base_stat"]}</p><progress value="${elm["base_stat"]}" max=100></progress></li>`
 	}).join().replaceAll(",", "")
+
+	document.querySelector(".pokemon-top > svg").style.fill = nextColor
+	document.querySelector(".pokemon-top").style.background = currentColor
+	document.querySelectorAll("h2").forEach((elm) => { elm.style.color = currentColor })
+	document.querySelectorAll(".basic-info li > p").forEach((elm) => { elm.style.color = currentColor })
+	document.querySelectorAll("progress").forEach((elm) => {
+		elm.style.setProperty("--third-text-color", currentColor);
+	})
 }
 
 function retrieveStatsName(input) {
-	let returnValue = input
 
-	returnValue = returnValue.replace("hp", "HP")
-	returnValue = returnValue.replace("speed", "SPD")
-	returnValue = returnValue.replace("attack", "ATK")
-	returnValue = returnValue.replace("defense", "DEF")
-	returnValue = returnValue.replace("special", "S")
-	returnValue = returnValue.replace("-", "")
+	input = input.replace("hp", "HP")
+	input = input.replace("speed", "SPD")
+	input = input.replace("attack", "ATK")
+	input = input.replace("defense", "DEF")
+	input = input.replace("special", "S")
+	input = input.replace("-", "")
 
-	return returnValue
+	return input
 }
 
 function retrievePokemonID(id) {
